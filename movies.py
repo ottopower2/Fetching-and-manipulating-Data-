@@ -89,14 +89,3 @@ def My_Genre():
    
 My_Genre()
 
-#DataType of Price
-# print(df["Worldwide Gross"].dtype)
-# df["Worldwide Gross"]= df["Worldwide Gross"].str.replace('[\$\,\.]', '').astype(int)
-# print(df["Worldwide Gross"].sum())
-# Comedy_price=[]
-# for i in df["Worldwide Gross"]:
-#     print(i)
-# print(Comedy_price)
-
-# print(grouped.get_group("Comedy"))
-
