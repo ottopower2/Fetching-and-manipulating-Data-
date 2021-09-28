@@ -33,7 +33,7 @@ print(df["Worldwide Gross"].sum())
  
 print('*'*40)
 
-My_Year_of_editon_Comedy=[]
+My_Year_of_editon_Genre=[]
 for key,value in grouped:
     # print(key)
     # print(value)
@@ -41,37 +41,49 @@ for key,value in grouped:
         print(value)
         comedy_price=value["Worldwide Gross"]
         print(comedy_price.sum())
-        Year_of_editon_Comedy=value["Year"]
-        for i in Year_of_editon_Comedy:
+        Year_of_editon_Genre=value["Year"]
+        for i in Year_of_editon_Genre:
             
-            My_Year_of_editon_Comedy.append(i)
-        print(f"Number of Drama_Film in 2010 is  : {My_Year_of_editon_Comedy.count(2010)}")
+            My_Year_of_editon_Genre.append(i)
+        print(f"Number of Drama_Film in 2010 is  : {My_Year_of_editon_Genre.count(2010)}")
 print(df.columns) 
 print('*'*40)
 print('*'*40)
 
  ################                         Testing                             ################ 
 
+seen = set()
+result = []
+for item in df["Genre"]:
+    if item not in seen:
+        seen.add(item)
+        result.append(item)
+print(result)
+
+# for genre in df["Genre"]:
+#      print(genre)
+#      print(len(genre))
+
   ################ Building Function to drive specific data incl. calculations############### 
 print("Creat Function to retrieve Data: ")
+ 
 def My_Genre():
-      
+    
+    print(f" Available Genre is : {result}")
+    print(f" put the available Genre, Note: choose just one genre from the list : {result}")
     grouped=df.groupby("Genre") 
     key=input()
     value=grouped.get_group(key)
     print(value)
-    comedy_price=value["Worldwide Gross"]
-    print(f" the Total Price of Drama Film in $ is : {comedy_price.sum()}")
-    Year_of_editon_Comedy=value["Year"]
-    for i in Year_of_editon_Comedy:       
-        My_Year_of_editon_Comedy.append(i)
+    The_price=value["Worldwide Gross"]
+    print(f" the Total Price of Drama Film in $ is : {The_price.sum()}")
 
-    print(f" The total numbers of Drama Film is {len(My_Year_of_editon_Comedy)}")
+    print(f" The total numbers of Drama Film is {len(My_Year_of_editon_Genre)}")
 
     Year_vec=[2007, 2008, 2009, 2010, 2011]# there is a python syntax to remove duplicated years ......
     for i in Year_vec:
      
-        print(f"Number of Drama_Film {i} in Years is  : {My_Year_of_editon_Comedy.count(i)}")
+        print(f"Number of Drama_Film {i} in Years is  : {My_Year_of_editon_Genre.count(i)}") #already methode created line 36-48
    
 My_Genre()
 
