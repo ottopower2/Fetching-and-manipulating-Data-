@@ -51,7 +51,7 @@ print('*'*40)
 print('*'*40)
 
  ################                         Testing                             ################ 
-
+#remove duplicate string from List #
 seen = set()
 result = []
 for item in df["Genre"]:
@@ -60,9 +60,7 @@ for item in df["Genre"]:
         result.append(item)
 print(result)
 
-# for genre in df["Genre"]:
-#      print(genre)
-#      print(len(genre))
+
 
   ################ Building Function to drive specific data incl. calculations############### 
 print("Creat Function to retrieve Data: ")
